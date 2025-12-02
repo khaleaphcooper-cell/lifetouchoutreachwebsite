@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifetouch Outreach | Prophet Loyel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        maroon: {
+                            light: '#a01e1e',
+                            DEFAULT: '#800000', // Primary Maroon
+                            dark: '#4a0404',    // Deep Maroon/Blackish
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#d4af37', // Metallic Gold
+                            600: '#b4941f',
+                        },
+                        black: {
+                            DEFAULT: '#000000',
+                            soft: '#1a1a1a',
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Cinzel', 'serif'],
+                        body: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background-color: #000000;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(74, 4, 4, 0.7)), url("https://images.unsplash.com/photo-1510936111840-65e151ad71bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2090&q=80");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #d4af37 0%, #fbbf24 50%, #b4941f 100%);
+        }
+        .maroon-gradient {
+            background: linear-gradient(135deg, #800000 0%, #4a0404 100%);
+        }
+        /* Loading Spinner */
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #d4af37;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="font-body text-black-soft antialiased selection:bg-maroon-DEFAULT selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-md fixed w-full z-50 transition-all duration-300 border-b-4 border-gold-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-24 items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-maroon-DEFAULT rounded-full flex items-center justify-center text-white shadow-lg border-2 border-gold-500">
+                        <i class="fas fa-hands-holding-circle text-2xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-heading text-xl md:text-2xl font-bold text-black tracking-wider leading-none">Lifetouch</h1>
+                        <p class="text-xs text-maroon-DEFAULT font-bold uppercase tracking-[0.2em] leading-tight">Outreach Ministry</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-black hover:text-maroon-DEFAULT font-medium transition text-sm uppercase tracking-wide">Home</a>
+                    <a href="#journey" class="text-black hover:text-maroon-DEFAULT font-medium transition text-sm uppercase tracking-wide">Journey</a>
+                    <a href="#prophet" class="text-black hover:text-maroon-DEFAULT font-medium transition text-sm uppercase tracking-wide">Prophet</a>
+                    <a href="#ai-assistant" class="text-gold-600 hover:text-maroon-DEFAULT font-medium transition text-sm uppercase tracking-wide font-bold">AI Helper ✨</a>
+                    <a href="#contact" class="px-6 py-2 bg-maroon-DEFAULT text-white rounded-none hover:bg-black transition shadow-lg text-sm font-bold uppercase tracking-wide border border-gold-500">
+                        <i class="fas fa-phone-alt mr-2 text-xs"></i>Contact
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-black hover:text-maroon-DEFAULT focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#home" class="block px-3 py-3 text-base font-medium text-black hover:bg-gray-50 hover:text-maroon-DEFAULT">Home</a>
+                <a href="#journey" class="block px-3 py-3 text-base font-medium text-black hover:bg-gray-50 hover:text-maroon-DEFAULT">Our Journey</a>
+                <a href="#prophet" class="block px-3 py-3 text-base font-medium text-black hover:bg-gray-50 hover:text-maroon-DEFAULT">Prophet Loyel</a>
+                <a href="#ai-assistant" class="block px-3 py-3 text-base font-medium text-gold-600 hover:bg-gray-50 hover:text-maroon-DEFAULT">AI Helper ✨</a>
+                <a href="#contact" class="block px-3 py-3 text-base font-medium text-black hover:bg-gray-50 hover:text-maroon-DEFAULT">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero-bg h-screen flex items-center justify-center relative px-4">
+        <div class="text-center max-w-5xl mx-auto relative z-10 pt-16">
+            <div class="inline-block mb-4 px-6 py-2 border-2 border-gold-500 bg-black/60 backdrop-blur-sm">
+                <span class="text-gold-500 text-sm font-bold tracking-widest uppercase">Myrtle Beach, South Carolina</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold text-white font-heading mb-6 leading-tight drop-shadow-lg">
+                Behold, I Do A <span class="text-gold-500 italic">New Thing</span>
+            </h1>
+            <p class="text-lg md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
+                Touching lives, saving souls, and teaching the work of salvation. 
+                <br class="hidden md:block">Join <strong>Lifetouch Outreach</strong> as we labor for the eternal reward.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-5 justify-center">
+                <a href="#prophet" class="px-8 py-4 bg-maroon-DEFAULT border-2 border-maroon-DEFAULT text-white font-bold hover:bg-black hover:border-gold-500 hover:text-gold-500 transition shadow-lg transform hover:-translate-y-1 uppercase tracking-wider text-sm">
+                    Read The Testimony
+                </a>
+                <a href="#contact" class="px-8 py-4 bg-transparent border-2 border-gold-500 text-gold-500 font-bold hover:bg-gold-500 hover:text-black transition uppercase tracking-wider text-sm">
+                    Get Counseling
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-10 animate-bounce text-gold-500">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </header>
+
+    <!-- The Journey Map -->
+    <section id="journey" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-black">A Decade of Faith</h2>
+                <div class="w-24 h-1 bg-maroon-DEFAULT mx-auto mt-4 mb-4"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">For 10 years, Lifetouch Outreach has followed the cloud by day and fire by night.</p>
+            </div>
+
+            <div class="relative">
+                <!-- Connecting Line -->
+                <div class="hidden md:block absolute top-12 left-[10%] right-[10%] h-1 bg-gold-200 z-0"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
+                    <!-- Location 1 -->
+                    <div class="text-center group">
+                        <div class="w-24 h-24 bg-white border-4 border-maroon-DEFAULT group-hover:bg-maroon-DEFAULT group-hover:text-white rounded-full flex items-center justify-center mx-auto mb-6 transition-colors duration-300 shadow-xl">
+                            <i class="fas fa-seedling text-3xl text-maroon-DEFAULT group-hover:text-white transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-black">Oklahoma</h3>
+                        <p class="text-sm font-bold text-gold-600 uppercase tracking-widest mb-2">The Beginning</p>
+                        <p class="text-gray-600 text-sm px-4">Where the vision was birthed and the foundation of salvation was laid.</p>
+                    </div>
+
+                    <!-- Location 2 -->
+                    <div class="text-center group">
+                        <div class="w-24 h-24 bg-white border-4 border-maroon-DEFAULT group-hover:bg-maroon-DEFAULT group-hover:text-white rounded-full flex items-center justify-center mx-auto mb-6 transition-colors duration-300 shadow-xl">
+                            <i class="fas fa-route text-3xl text-maroon-DEFAULT group-hover:text-white transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-black">North Carolina</h3>
+                        <p class="text-sm font-bold text-gold-600 uppercase tracking-widest mb-2">The Expansion</p>
+                        <p class="text-gray-600 text-sm px-4">Moving in obedience, spreading the gospel and refining the work of ministry.</p>
+                    </div>
+
+                    <!-- Location 3 -->
+                    <div class="text-center group">
+                        <div class="w-24 h-24 gold-gradient border-4 border-black rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl transform scale-110">
+                            <i class="fas fa-water text-3xl text-black"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-maroon-DEFAULT">Myrtle Beach, SC</h3>
+                        <p class="text-sm font-bold text-black uppercase tracking-widest mb-2">The New Thing</p>
+                        <p class="text-gray-800 text-sm px-4 font-semibold">Our current home. A new season of harvesting souls and spiritual counseling.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prophet Loyel: The Anointed Vessel (Testimony Section) -->
+    <section id="prophet" class="py-24 bg-black relative overflow-hidden">
+        <!-- Decorative bg -->
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-maroon-dark opacity-20 transform skew-x-12 translate-x-20"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row gap-16 items-start">
+                
+                <!-- Left: Title and Key Info -->
+                <div class="lg:w-1/3">
+                    <div class="bg-maroon-DEFAULT text-white p-8 border-2 border-gold-500 shadow-2xl relative">
+                        <div class="absolute top-4 right-4 text-gold-500 opacity-20 text-6xl">
+                            <i class="fas fa-cross"></i>
+                        </div>
+                        
+                        <h2 class="text-4xl font-heading font-bold mb-2 text-white">Prophet Loyel</h2>
+                        <p class="text-gold-500 font-bold uppercase tracking-widest text-sm mb-6">Founder & Visionary</p>
+                        
+                        <div class="space-y-6">
+                            <!-- Divine Obedience Section -->
+                            <div class="bg-black/30 p-4 border-l-2 border-gold-500 mb-6">
+                                <h4 class="font-bold text-gold-400 text-sm uppercase mb-2">Total Surrender</h4>
+                                <p class="text-gray-200 text-sm leading-relaxed italic">
+                                    "For I have not spoken of myself; but the Father which sent me, he gave me a commandment, what I should say, and what I should speak." <br><span class="text-xs text-gold-500 not-italic">- John 12:49</span>
+                                </p>
+                                <p class="text-white text-sm leading-relaxed mt-2 font-medium">
+                                    The Prophet does not move unless God says move, and he does not speak unless God says speak.
+                                </p>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-hand-sparkles text-gold-500 text-2xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-lg text-white">Anointed at Age 5</h4>
+                                    <p class="text-gray-300 text-sm leading-relaxed">God marked his hands for ministry as a young child, setting him apart for a lifelong work of healing and deliverance.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: The Testimonies -->
+                <div class="lg:w-2/3">
+                    <h3 class="text-3xl font-heading font-bold text-white mb-8 border-l-4 border-gold-500 pl-4">A Testimony of Fire & Water</h3>
+                    
+                    <div class="space-y-12">
+                        <!-- Wilderness Testimony -->
+                        <div class="flex flex-col md:flex-row gap-6">
+                            <div class="flex-shrink-0">
+                                <div class="w-16 h-16 bg-gray-800 border border-gray-600 rounded-full flex items-center justify-center text-gold-500">
+                                    <i class="fas fa-home text-2xl"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2">3 Years in the Wilderness</h4>
+                                <p class="text-gray-400 leading-relaxed">
+                                    Like Elijah by the brook or David in the caves, Prophet Loyel endured <strong>three years of homelessness</strong>. It was in this desert place that God stripped away the reliance on man and taught him total dependence on the Spirit. Biblically, the wilderness is not a place of abandonment, but of preparation. God brought him through the cold nights and the hunger, refining his spirit for the counseling ministry he leads today.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- The Accident Testimony -->
+                        <div class="flex flex-col md:flex-row gap-6">
+                            <div class="flex-shrink-0">
+                                <div class="w-16 h-16 bg-maroon-dark border border-red-900 rounded-full flex items-center justify-center text-red-500 animate-pulse">
+                                    <i class="fas fa-car-crash text-2xl"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2">The Miracle in the Canal</h4>
+                                <p class="text-gray-400 leading-relaxed mb-4">
+                                    The enemy sought to destroy the call on his life in a horrific event. Prophet Loyel was drugged, causing him to fall unconscious behind the wheel. The car careened out of control, smashing over <strong>three roundabouts</strong>, tearing through a <strong>steel fence</strong>, and plunging into a <strong>canal</strong>.
+                                </p>
+                                <div class="bg-gray-900 border-l-4 border-gold-500 p-4">
+                                    <p class="text-gray-200 font-medium italic">
+                                        "In spite of being unconscious, my spirit was awake. I was found <span class="text-gold-500 font-bold">still praying</span>."
+                                    </p>
+                                </div>
+                                <p class="text-gray-400 mt-4 leading-relaxed">
+                                    God's hand sustained him underwater. While the car was destroyed, the Prophet was preserved. This testimony stands as proof that no weapon formed against God's anointed shall prosper.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- The Mission & The Reward -->
+    <section id="reward" class="py-24 bg-white text-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <i class="fas fa-crown text-maroon-DEFAULT text-6xl mb-6"></i>
+            <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6 text-black">The Reward We Labor For</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-16">
+                Lifetouch Outreach isn't just about temporal relief; it is about eternal security. We teach the work of salvation with eyes fixed on the Kingdom.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+                <!-- Card 1 -->
+                <div class="bg-gray-50 border border-gray-200 p-8 hover:border-maroon-DEFAULT transition duration-300 group shadow-lg">
+                    <div class="text-gold-500 text-3xl mb-4 group-hover:scale-110 transition duration-300"><i class="fas fa-bible"></i></div>
+                    <h3 class="text-xl font-bold text-black mb-2 group-hover:text-maroon-DEFAULT transition">The Work of Salvation</h3>
+                    <p class="text-gray-600">Salvation is a walk, not just a word. We guide souls through repentance, baptism, and the infilling of the Holy Ghost, establishing a foundation that cannot be moved.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-gray-50 border border-gray-200 p-8 hover:border-maroon-DEFAULT transition duration-300 group shadow-lg">
+                    <div class="text-gold-500 text-3xl mb-4 group-hover:scale-110 transition duration-300"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h3 class="text-xl font-bold text-black mb-2 group-hover:text-maroon-DEFAULT transition">Spiritual Counseling</h3>
+                    <p class="text-gray-600">Drawing from the deep wells of Prophet Loyel's experiences, we offer counseling that addresses the root of spiritual bondage, not just the symptoms.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-gray-50 border border-gray-200 p-8 hover:border-maroon-DEFAULT transition duration-300 group shadow-lg">
+                    <div class="text-gold-500 text-3xl mb-4 group-hover:scale-110 transition duration-300"><i class="fas fa-award"></i></div>
+                    <h3 class="text-xl font-bold text-black mb-2 group-hover:text-maroon-DEFAULT transition">The Eternal Prize</h3>
+                    <p class="text-gray-600">"Behold, I come quickly; and my reward is with me." We prepare the saints to receive the crown of life, enduring all things for the sake of the elect.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Spiritual Assistant -->
+    <section id="ai-assistant" class="py-24 bg-gradient-to-br from-black to-maroon-dark text-white relative border-t-4 border-gold-500">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <span class="text-gold-400 font-bold tracking-widest uppercase text-sm">Powered by Gemini AI</span>
+                <h2 class="text-3xl md:text-5xl font-heading font-bold text-white mt-2 mb-4">Spiritual Insight Assistant</h2>
+                <div class="w-24 h-1 bg-gold-500 mx-auto rounded"></div>
+                <p class="text-gray-300 mt-6 max-w-2xl mx-auto">
+                    While waiting to speak with Prophet Loyel, use our ministry assistant to find specific scriptures for your situation or to draft a prayer to help you seek the Lord.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-2xl overflow-hidden border-2 border-gold-500 max-w-3xl mx-auto">
+                <div class="p-8 bg-gray-50 border-b border-gray-200">
+                    <label class="block text-gray-700 font-bold mb-2 text-lg">What is on your heart today?</label>
+                    <textarea id="user-input" rows="3" class="w-full p-4 rounded-lg border border-gray-300 focus:ring-2 focus:ring-maroon-DEFAULT focus:border-transparent outline-none text-gray-800" placeholder="e.g., I am feeling anxious about the future... or I need strength for a new job..."></textarea>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 mt-6">
+                        <button onclick="generateSpiritualContent('scripture')" class="flex-1 bg-maroon-DEFAULT hover:bg-maroon-dark text-white font-bold py-3 px-6 rounded shadow-lg transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                            <i class="fas fa-book-bible text-gold-400"></i> Find Scripture ✨
+                        </button>
+                        <button onclick="generateSpiritualContent('prayer')" class="flex-1 bg-black hover:bg-gray-900 text-white font-bold py-3 px-6 rounded shadow-lg transition transform hover:-translate-y-1 flex items-center justify-center gap-2 border border-gold-500">
+                            <i class="fas fa-praying-hands text-gold-400"></i> Draft Prayer ✨
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="p-8 bg-white min-h-[200px]">
+                    <div id="ai-loading" class="hidden flex flex-col items-center justify-center py-8">
+                        <div class="loader mb-4"></div>
+                        <p class="text-maroon-DEFAULT font-bold animate-pulse">Seeking the wisdom of the Word...</p>
+                    </div>
+                    
+                    <div id="ai-output" class="prose prose-lg max-w-none text-gray-600">
+                        <p class="text-center italic text-gray-400">Your spiritual encouragement will appear here...</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="text-center text-gray-500 text-xs mt-6 italic">
+                *This tool uses Artificial Intelligence to provide biblical references. For prophetic counsel or serious matters, please contact Prophet Loyel directly below.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-maroon-DEFAULT relative">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')] opacity-30"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-white rounded-none shadow-2xl overflow-hidden border-4 border-gold-500">
+                <div class="p-8 md:p-12">
+                    <div class="text-center mb-10">
+                        <h2 class="text-3xl font-heading font-bold text-black">Reach Out for Counsel</h2>
+                        <div class="w-16 h-1 bg-gold-500 mx-auto mt-4"></div>
+                        <p class="text-gray-600 mt-4">Prophet Loyel is available for spiritual guidance and prayer.</p>
+                    </div>
+                    
+                    <form class="space-y-6" onsubmit="event.preventDefault(); alert('Thank you. Your prayer request has been received.');">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-bold text-black mb-2">Name</label>
+                                <input type="text" class="w-full px-4 py-3 bg-gray-50 border border-gray-300 focus:border-maroon-DEFAULT focus:ring-1 focus:ring-maroon-DEFAULT outline-none transition" placeholder="Your Full Name">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-black mb-2">Phone</label>
+                                <input type="tel" class="w-full px-4 py-3 bg-gray-50 border border-gray-300 focus:border-maroon-DEFAULT focus:ring-1 focus:ring-maroon-DEFAULT outline-none transition" placeholder="(555) 000-0000">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-bold text-black mb-2">Email Address</label>
+                            <input type="email" class="w-full px-4 py-3 bg-gray-50 border border-gray-300 focus:border-maroon-DEFAULT focus:ring-1 focus:ring-maroon-DEFAULT outline-none transition" placeholder="you@email.com">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-black mb-2">How can we help?</label>
+                            <textarea rows="4" class="w-full px-4 py-3 bg-gray-50 border border-gray-300 focus:border-maroon-DEFAULT focus:ring-1 focus:ring-maroon-DEFAULT outline-none transition" placeholder="Share your prayer request or inquiry here..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-maroon-DEFAULT hover:bg-black text-white font-bold py-4 shadow-lg transition duration-300 uppercase tracking-widest text-sm border border-transparent hover:border-gold-500">
+                            Send Message
+                        </button>
+                    </form>
+
+                    <div class="mt-10 pt-6 border-t border-gray-200 flex flex-col md:flex-row justify-center items-center gap-8 text-gray-700">
+                        <div class="flex items-center gap-2">
+                            <div class="w-10 h-10 bg-maroon-DEFAULT rounded-full flex items-center justify-center text-white">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <span class="font-bold">Myrtle Beach, SC</span>
+                        </div>
+                        <div class="flex flex-col gap-3 items-start md:items-start">
+                            <div class="flex items-center gap-2">
+                                <div class="w-8 h-8 bg-gold-500 rounded-full flex items-center justify-center text-white text-sm">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <a href="tel:9107241205" class="font-bold text-black hover:text-maroon-DEFAULT transition">910-724-1205</a>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center text-white text-sm">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <a href="tel:8435642527" class="font-bold text-black hover:text-maroon-DEFAULT transition">843-564-2527</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400 py-12 border-t border-gold-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0 text-center md:text-left">
+                <span class="text-white font-heading font-bold text-xl block">Lifetouch Outreach</span>
+                <span class="text-gold-500 text-xs uppercase tracking-widest">Prophet Loyel</span>
+                <p class="text-sm mt-2 text-gray-500">Established in Truth. Walking in Victory.</p>
+            </div>
+            <div class="text-sm mt-4 md:mt-0">
+                &copy; 2024 Lifetouch Outreach Ministry. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS for Gemini Integration -->
+    <script>
+        async function generateSpiritualContent(type) {
+            const input = document.getElementById('user-input').value;
+            const outputDiv = document.getElementById('ai-output');
+            const loadingDiv = document.getElementById('ai-loading');
+            
+            if (!input) {
+                alert("Please share what is on your heart first.");
+                return;
+            }
+
+            // UI State - Loading
+            outputDiv.classList.add('hidden');
+            loadingDiv.classList.remove('hidden');
+
+            const apiKey = ""; // API Key injected by environment
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+
+            // Prompt Engineering
+            let prompt = "";
+            let systemInstruction = "You are a helpful biblical assistant for Lifetouch Outreach Ministry. You provide King James Version (KJV) scripture references and comforting, faith-filled prayers. You honor the prophetic ministry of Prophet Loyel. Keep responses concise, encouraging, and rooted in biblical truth. Always emphasize that true deliverance comes from God.";
+
+            if (type === 'scripture') {
+                prompt = `The user is feeling or experiencing: "${input}". Provide 2-3 comforting King James Version (KJV) bible verses specifically relevant to this situation. For each verse, add a brief, 1-sentence explanation of how God brings deliverance in this area. Format with bold verse references.`;
+            } else {
+                prompt = `The user is dealing with: "${input}". Write a powerful, faith-filled prayer (about 100 words) for them to pray right now, focusing on victory, salvation, and the power of the Holy Spirit. Use KJV style language where appropriate (Thee, Thou, Thy) but keep it accessible. End with "In Jesus' Name, Amen."`;
+            }
+
+            try {
+                // Exponential backoff logic not needed for simple demo, but good practice
+                // Simple fetch for now
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: prompt }] }],
+                        systemInstruction: { parts: [{ text: systemInstruction }] }
+                    })
+                });
+                
+                if (!response.ok) throw new Error('API Error');
+
+                const data = await response.json();
+                const text = data.candidates?.[0]?.content?.parts?.[0]?.text || "I apologize, but I couldn't generate a response at this time.";
+                
+                // Simple markdown parsing to HTML
+                let formattedText = text
+                    .replace(/\*\*(.*?)\*\*/g, '<strong class="text-maroon-DEFAULT">$1</strong>') // Bold to Maroon Strong
+                    .replace(/\n/g, '<br>'); // Newlines to BR
+                
+                outputDiv.innerHTML = `<div class="bg-yellow-50 p-6 rounded-lg border-l-4 border-gold-500"><p class="text-gray-800 leading-relaxed font-body text-lg">${formattedText}</p></div>`;
+                outputDiv.classList.remove('hidden');
+
+            } catch (error) {
+                console.error(error);
+                outputDiv.innerHTML = `<p class="text-red-800 font-bold bg-red-100 p-4 rounded">Unable to connect to the spiritual assistant at this moment. Please check your connection or try again later.</p>`;
+                outputDiv.classList.remove('hidden');
+            } finally {
+                loadingDiv.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
